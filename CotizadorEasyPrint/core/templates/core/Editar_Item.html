@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Editar{% endblock %}</title>
+    </head>
+    <body>
+        <div class="container">    
+            {% block bodycontent %}
+            <div class="row">
+                <h2>Editar ítem</h2>
+                <div class="FormularioInicial editar" style="padding: 100px">
+                    <div class="card-body">
+                        <form action="/EditarProducto" method="POST" class="Formulario_Editar">
+                            {% csrf_token %}
+                            <div class="form-group cliente">
+                                <label for="cliente" style="font-weight: bold; color:white">Cliente</label>
+                                <input type="text" id="cliente" name="cliente" class="form-control" placeholder="Cliente" value="{{prod.cliente}}" readonly required>
+                            </div>
+                            <div class="form-group codigo">
+                                <label for="codigo" style="font-weight: bold; color:white">Código</label>
+                                <input type="text" id="codigo" name="codigo" class="form-control" placeholder="Código" value="{{prod.codigo}}" readonly required>
+                            </div>
+                            <div class="form-group producto">
+                                <label for="producto" style="font-weight: bold; color:white">Producto</label>
+                                <select name="edit_producto" id="edit_producto" class="form-control" dafault="{{prod.nombre}}">
+                                    <option value="{{prod.nombre}}">{{prod.nombre}}
+                                    {% for p in Prods %}
+                                        {% if p.resultado == 0 and p.nombre != prod.nombre %}
+                                            <option value="{{p.nombre}}">{{p.nombre}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group cantidad">
+                                <label for="cantidad" style="font-weight: bold; color:white">Cantidad</label>
+                                <input type="text" id="cantidad" name="cantidad" class="form-control" min = "1" value="{{prod.cantidad}}" required>
+                            </div>
+                            <div class="form-group descuento">
+                                <label for="descuento" style="font-weight: bold; color:white">Descuento</label>
+                                <input type="text" id="descuento" name="descuento" class="form-control" min="0" max="100" value="0" value="{{prod.descuento}}" required>
+                            </div>
+                            <div class="form-group info_adic">
+                                <label for="info_adic" style="font-weight: bold; color:white">Información adicional</label>
+                                <input type="textarea" id="info_adic" name="info_adic" class="form-control" placeholder="Información adicional" value="{{prod.info_adic}}" required>
+                            </div>
+                            <div class="form-group btn-guardar-cancelar">
+                                <a href="/VerPresupuesto/{{prod.presupuesto}}" class="btn btn-danger"><i class="fa-solid fa-xmark"> Cancelar </i></a>
+                                <button type="submit" class="btn btn-success"><i class="fa-regular fa-floppy-disk"> Guardar </i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+    </body>
+</html>

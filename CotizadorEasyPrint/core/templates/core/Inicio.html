@@ -1,0 +1,94 @@
+{% extends 'core/Formulario_general.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        {% endblock %} 
+        <title>{% block title %}Nueva Cotización{% endblock %}</title>
+    </head>
+    <body>
+        {% block bodytitle %}<h1>Nuevo Presupuesto</h1>{% endblock %}
+        {% block cliente %}
+        <div class="form-group cliente">
+            <label for="cliente" style="font-weight: bold; color:white">Cliente</label>
+            <input type="text" id="cliente" name="cliente" class="form-control" placeholder="Cliente">
+        </div>
+        {% endblock %}
+        {% block N_presupuesto %}
+        <div class="form-group n_presupuesto">
+            <label for="n_presupuesto" style="font-weight: bold; color:white">N° Presupusto</label>
+            <input type="text" id="n_presupuesto" name="n_presupuesto" class="form-control" value="{{np}}" readonly>
+        </div>
+        <br>
+        {% endblock %}
+        {% block tablaPresupuesto %}
+        <div class="row">    
+            <div class="container">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <table id="NuevoPresupuesto" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="centered">Código</th>
+                                <th class="centered">Servicio</th>
+                                <th class="centered">Descripción</th>
+                                <th class="centered">Cantidad</th>
+                                <th class="centered">Precio</th>
+                                <th class="centered">Descuento [%]</th>
+                                <th class="centered">Descuento [$]</th>
+                                <th class="centered">Total</th>
+                                <th class="centered">Editar/Borrar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_Presupuesto">
+                            {% for c in Prods %}
+                                    <tr>
+                                        <td>{{c.codigo}}</td>
+                                        <td>{{c.nombre}}</td>
+                                        <td>{{c.info_adic}}</td>
+                                        <td>{{c.cantidad}}</td>
+                                        <td>$ {{c.precio}}</td>
+                                        <td>{{c.desc_porcentaje}}%</td>
+                                        <td>$ {{c.desc_plata}}</td>
+                                        <td>$ {{c.resultado}}</td>
+                                        <td>
+                                            <a href="EditCalc_Presupuesto/{{c.codigo}}" class="btn btn-info btn-xs"><i class="fa-solid fa-pencil"></i></a>
+                                            <a href="DeleteCalc_Presupuesto/{{c.codigo}}" class="btn btn-danger btn-xs btnEliminacion"><i class="fa-solid fa-trash-can"></i></a>
+                                        </td>
+                                    </tr>
+                                    
+                            {% endfor %} 
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="8" style="text-align:right; font-weight: bold;">Total bruto:</td>
+                                <td>$ {{total}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align:right; font-weight: bold;">Total descuento:</td>
+                                <td>$ {{descuento}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" style="text-align:right; font-weight: bold;">Total Neto:</td>
+                                <td>$ {{totalNeto}}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="buttons">
+                    <a href="/BorrarTodo" class="btn btn-danger"><i class="fa-solid fa-trash-can"> Borrar todo </i></a>
+                    <a href="/GuardarPresupuesto" class="btn btn-secondary"><i class="fa-solid fa-sd-card"> Guardar presupuesto </i></a>
+                    <a href="/CompletarPedido" class="btn btn-success"><i class="fa-solid fa-check"> Confirmar pedido </i></a>
+                </div>
+            </div>
+        <!-- Custom Js -->
+        <script src="{% static 'core/js/Index.js' %}"></script>
+        
+
+        {% endblock %}
+    </body>
+
+</html>
+

@@ -1,0 +1,87 @@
+.presupuesto.encabezado{
+    display: flex;
+}
+#n_presupuesto{
+    height: 80px;
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+    position: absolute;
+    top: 85px;
+    left:1010px;
+    font-size: 40px;
+    border: none;
+}
+#dia{
+    height: 40px;
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+    position: absolute;
+    top:390px;
+    left:940px;
+    font-size: 40px;
+    border: none;
+}
+#mes{
+    height: 40px;
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+    position: absolute;
+    top:390px;
+    left:1020px;
+    font-size: 40px;
+    border: none;
+}
+#anio{
+    height: 40px;
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+    position: absolute;
+    top:390px;
+    left:1085px;
+    font-size: 40px;
+    border: none;
+}
+
+#cliente{
+    height: 40px;
+    width: 1000px;
+    background-color: transparent;
+    position: absolute;
+    top:585px;
+    left:150px;
+    font-size: 40px;  
+    border: none;
+}
+
+#Descarga_Presupuesto{
+    width: 92%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}
+.presupuesto.footer{
+    min-height: 30vh;
+}
+.imagen-fondo{
+    width: 100%;
+    background-position: center center;
+    background-attachment:scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.redes{
+    width: 92%;
+}
+.disclaimer{
+    justify-content: center;
+    width: 95%;
+    z-index: -1;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}

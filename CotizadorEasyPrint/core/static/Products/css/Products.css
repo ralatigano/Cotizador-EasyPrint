@@ -1,0 +1,14 @@
+.centered {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.modal-body{
+    display: grid;
+    gap: 15px;
+}
+
+#botones_productos{
+    display: grid;
+    gap: 5px;
+}

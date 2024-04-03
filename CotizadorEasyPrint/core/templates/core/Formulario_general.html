@@ -1,0 +1,89 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        {% block bodycontent %}
+        <div class="container">
+                
+            {% block bodytitle %}{% endblock %}
+            
+            <br>
+            <div class="row">
+                
+                <div class="FormularioInicial" style="padding: 50px">
+                    <div class="card-body">
+                        <form action="/AgregarProducto" method="POST" class="contenedor">
+                            {% csrf_token %}
+
+                            {% block cliente %}
+                            {% endblock %}
+
+                            {% block N_presupuesto %}
+                            {% endblock %}
+
+                            <div class="form-group categoria">
+                                <label for="categoria" style="font-weight: bold; color:white">Categoría</label>
+                                <select name="categoria" id="categoria" class="form-control select2">
+                                    <option value="0">Selecciona una categoría</option>
+                                    {% for c in Cat %}
+                                        <option value="{{c.nombre}}">{{c.nombre}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+
+                            <div class="form-group producto">
+                                <label for="producto" style="font-weight: bold; color:white">Producto</label>
+                                <select name="producto" id="producto" class="form-control select2">
+                                    {% for p in ListProds %}
+                                        {% if p.resultado == 0 %}
+                                            <option value="{{p.nombre}}" data-chained="{{p.categoria}}">{{p.nombre}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group cantidad-ancho-alto" name="cantidad-ancho-alto">
+                                <label for="cantidad" style="font-weight: bold; color:white">Cantidad: </label>
+                                <input type="text" id="cantidad" name="cantidad" class="form-control" min = "1" value="1" required>
+                                <label for="ancho" style="font-weight: bold; color:white">Ancho [cm]: </label>
+                                <input type="text" id="ancho" name="ancho" class="form-control" value="0">
+                                <label for="alto" style="font-weight: bold; color:white">Alto [cm]: </label>
+                                <input type="text" id="alto" name="alto" class="form-control" value="0">
+                            </div>
+
+                            <div class="form-group descuento">
+                                <label for="descuento" style="font-weight: bold; color:white">Descuento</label>
+                                <input type="text" id="descuento" name="descuento" class="form-control" min="0" max="100" value="0" required>
+                            </div>
+
+                            <div class="form-group info_adic">
+                                <label for="info_adic" style="font-weight: bold; color:white">Información adicional</label>
+                                <input type="textarea" id="info_adic" name="info_adic" class="form-control" placeholder="Información adicional">
+                            </div>
+
+                            <div class="form-group btn_agregar">
+                                <button type="submit" class="btn btn_agregar btn-warning"><i class="fa-solid fa-calculator"> Agregar </i></button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            {% block tablaPresupuesto %}
+            {% endblock%}
+
+
+        {% endblock %}
+        </div>
+
+    </body>
+
+</html>
+

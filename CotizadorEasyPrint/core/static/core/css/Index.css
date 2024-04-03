@@ -1,0 +1,135 @@
+.centered {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+}
+.background-image {
+    background-image: linear-gradient(180deg, #b2eaff 0, #5389f2 50%, #003265 100%);
+}
+.FormularioInicial {
+    background-color:#003265;
+    border-radius: 10px;
+}
+.contenedor{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas:    "cliente cliente nothing n_presupuesto"
+                            "categoria categoria producto producto"
+                            "cantidad-ancho-alto cantidad-ancho-alto cantidad-ancho-alto cantidad-ancho-alto"
+                            "info_adic info_adic info_adic descuento"
+                            "btn_agregar btn_agregar btn_agregar btn_agregar";
+}
+
+.contenedor .form-group.cliente {
+    grid-area : cliente;
+}
+.contenedor .form-group.n_presupuesto {
+    grid-area : n_presupuesto;
+}
+.contenedor .form-group.categoria {
+    grid-area : categoria;
+}
+.contenedor .form-group.producto {
+    grid-area : producto;
+}
+.contenedor .form-group.cantidad-ancho-alto {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1;
+    grid-gap: 30px;
+    grid-area : cantidad-ancho-alto;
+}
+.contenedor .form-group.info_adic {
+    grid-area : info_adic;
+}
+.contenedor .form-group.descuento {
+    grid-area : descuento;
+}
+.contenedor .form-group.btn_agregar {
+    grid-area : btn_agregar;
+}
+
+.row {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#Presupuesto {
+    border-color: black;
+}
+
+.etiquetas {
+    color: white;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: 1;
+    grid-gap: 10px;
+}
+/* Editar_Item.html */
+.FormularioInicial.editar{
+    background-color:royalblue;
+    margin: 50px;
+    padding: 50px;
+}
+.Formulario_Editar{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas: "cliente cliente nothing1 nothing1 nothing1 nothing1"
+                         "codigo nothing2 nothing2 producto producto producto"
+                         "cantidad nothing3 nothing3 nothing3 nothing3 descuento"
+                         "info_adic info_adic info_adic info_adic info_adic info_adic"
+                         "btn-guardar-cancelar btn-guardar-cancelar btn-guardar-cancelar btn-guardar-cancelar btn-guardar-cancelar btn-guardar-cancelar";
+}
+.Formulario_Editar .form-group.cliente {
+    grid-area : cliente;
+}
+.Formulario_Editar .form-group.codigo {
+    grid-area : codigo;
+}
+.Formulario_Editar .form-group.producto {
+    grid-area : producto;
+}
+.Formulario_Editar .form-group.cantidad {
+    grid-area : cantidad;
+}
+.Formulario_Editar .form-group.descuento {
+    grid-area : descuento;
+}
+.Formulario_Editar .form-group.info_adic {
+    grid-area : info_adic;
+}
+.Formulario_Editar .form-group.btn-guardar-cancelar {
+    grid-area : btn-guardar-cancelar;
+}
+
+.Formulario_Pedido {
+    background-color:green;
+    margin: 50px;
+    padding: 50px;
+}
+.form-group.btn-guardar-cancelar {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows: 1;
+    grid-template-areas: "btn-danger nothing nothing btn-success";
+}
+
+.form-group.btn-guardar-cancelar .a.btn.btn-danger {
+    grid-area : btn-danger;
+}
+.form-group.btn-guardar-cancelar .button.btn.btn-success {
+    grid-area : btn-success;
+}

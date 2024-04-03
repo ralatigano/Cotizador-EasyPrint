@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Nuevo Cálculo{% endblock %}</title>
+    </head>
+    <body>
+        {% block bodycontent %}
+        <div class="row">    
+            <div class="container">
+                
+                <h1>Nuevo Cálculo</h1>
+                <p>Producto: {{nombre}}   Código: {{codigo}} </p>
+                <p>Cantidad: {{cantidad}} </p>
+                <p>Precio: {{precio}}</p>
+                <p>Descuento: {{descuento}} %</p>
+                <p>Detalle: {{info_adic}}</p>
+
+                {% if categoria == 'Papel' %}
+
+                    <p>Cantidad de hojas: {{cant_de_hojas}}</p>
+                    <p>Cantidad por hoja: {{cant_x_hoja}}</p>
+                    <p>Sobrante: {{sobrante}}</p>
+                
+                {% endif %}
+                
+                {% if categoria == 'Vinilo' %}
+                    <p>Superficie: {{superficie}} m2</p>
+                    <p>Pliegos: {{pliegos}}</p>
+                {% endif %}
+                
+                {% if categoria == 'Lona' or categoria == 'Vinilo-Stickers' %}
+                    <p>Superficie: {{superficie}} m2</p>
+                {% endif %}
+                
+                {% if categoria == 'Pulseras' %}
+
+                    <p>Cantidad de hojas: {{cant_de_hojas}}</p>
+                    <p>Sobrante: {{sobrante}}</p>
+            
+                {% endif %}
+
+
+                <p style="font-weight: bold;">Total: {{resultado}}</p>
+
+                <a href="/DeleteCalc_Presupuesto/{{codigo}}" class="btn btn-danger"><i class="fa-solid fa-circle-left"> Volver al inicio </i></a>
+                <a href={{url}} class="btn btn-warning"><i class="fa-solid fa-cart-plus"> Agregar al carrito </i></a>
+
+
+
+            </div>
+        </div>
+        {% endblock %}
+    </body>

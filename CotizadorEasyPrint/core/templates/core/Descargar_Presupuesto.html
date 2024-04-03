@@ -1,0 +1,90 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="{% static 'core/css/Descarga_Presupuesto.css' %}">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css">
+        <!-- Ícono -->
+        <link rel="shortcut icon" href="{%  static 'core/img/easy1.png' %}">
+        <title>{% block title %} Presupuesto N° {{np}} {% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <input type="text" id="n_presupuesto" name="n_presupuesto" class="form-control" value="{{np}}">
+            <input type="text" id="dia" name="dia" class="form-control" value="{{dia}}">
+            <input type="text" id="mes" name="mes" class="form-control" value="{{mes}}">
+            <input type="text" id="anio" name="anio" class="form-control" value="{{anio}}">
+            <div class="presupuesto encabezado imagen-fondo">
+                <img src="{% static imgEncabezado %}" alt="encabezado">
+            </div>
+        </header>
+        <main>
+            <input type="text" id="cliente" name="cliente" class="form-control" value="{{cliente}}">
+            <div class="presupuesto cliente imagen-fondo">
+                <img src="{% static 'core/img/cliente3.png' %}" alt="cliente">
+            </div>
+            <br>
+            <br>
+            <div class="presupuesto tabla">
+                <table id="Descarga_Presupuesto" class="table table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th class="centered">Código</th>
+                            <th class="centered">Cantidad</th>
+                            <th class="centered">Servicio</th>
+                            <th class="centered">Descripción</th>
+                            <th class="centered">Precio</th>
+                            <th class="centered">Descuento</th>
+                            <th class="centered">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody_Presupuesto">
+                        {% for c in Prods %}
+                            <tr>
+                                <td>{{c.codigo}}</td>
+                                <td>{{c.cantidad}}</td>
+                                <td>{{c.nombre}}</td>
+                                <td>{{c.info_adic}}</td>
+                                <td>$ {{c.precio}}</td>
+                                <td>$ {{c.desc_plata}}</td>
+                                <td>$ {{c.resultado}}</td>
+                            </tr>
+                        {% endfor %} 
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="6" style="text-align:right">Subtotal Descuento:</th>
+                            <th>{{descuento}}</th>
+                        </tr>
+                        <tr>
+                            <th colspan="6" style="text-align:right">Total:</th>
+                            <th>$ {{total}}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <img class="redes" src="{% static 'core/img/footer.png' %}" alt="redes">
+        </main>
+
+        <footer>
+            <img class="disclaimer" src="{% static 'core/img/disclaimer.png' %}" alt="Img_disclaimer">
+            <br>
+            <br>
+            <img class="redes" src="{% static 'core/img/footer.png' %}" alt="redes">
+        </footer>
+    </body>
+
+    <!-- Custom Js -->
+    <script src="{% static 'core/js/Descarga_Presupuesto.js' %}"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <!-- DataTables.Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script> 
+</html>

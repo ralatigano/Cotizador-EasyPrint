@@ -1,0 +1,56 @@
+"Id,	Nombre,							Ancho,Alto,	Precio,		Categoria"
+0001,Impresión en papel 90g simple faz,31,46,274.97,Papel
+0002,Impresión en papel 90g doble faz,31,46,405.65,Papel
+0003,Impresión en papel 115g simple faz,31,46,317.53,Papel
+0004,Impresión en papel 115g doble faz,31,46,448.21,Papel
+0005,Impresión en papel 150g simple faz,31,46,407.62,Papel
+0006,Impresión en papel 150g doble faz,31,46,538.30,Papel
+0007,Impresión en papel 200g simple faz,31,46,461.56,Papel
+0008,Impresión en papel 200g doble faz,31,46,592.24,Papel
+0009,Impresión en papel 300g simple faz,31,46,679.78,Papel
+0010,Impresión en papel 300g doble faz,31,46,810.46,Papel
+0011,Impresión en papel 350g simple faz,31,46,962.00,Papel
+0012,Impresión en papel 350g doble faz,31,46,1186.00,Papel
+0013,Autoadhesivo blanco brillante,31,46,544.28,Papel
+0014,Pulseras,31,46,879.82,Papel
+0015,Impresión en papel ByN 80g simple faz,31,46,197.77,Papel
+0016,Impresión en papel ByN 80g doble faz,31,46,314.75,Papel
+0017,Impresión en papel ByN 90g simple faz,31,46,206.75,Papel
+0018,Impresión en papel ByN 90g doble faz,31,46,323.72,Papel
+0019,Impresión en papel ByN 120g simple faz,31,46,278.56,Papel
+0020,Impresión en papel ByN 120g doble faz,31,46,395.54,Papel
+0021,Impresión en papel ByN 150g simple faz,31,46,310.88,Papel
+0022,Impresión en papel ByN 150g doble faz,31,46,427.85,Papel
+0023,Impresión en papel ByN 180g simple faz,31,46,336.01,Papel
+0024,Impresión en papel ByN 180g doble faz,31,46,452.99,Papel
+0025,Impresión en papel ByN 240g simple faz,31,46,440.14,Papel
+0026,Impresión en papel ByN 240g doble faz,31,46,557.12,Papel
+0027,Vinilo impreso,100,100,4569.00,Vinilo
+0028,Stickers en vinilo,100,134,6106.00,Vinilo-Stickers
+0029,Vinilo transparente,100,100,6106.00,Vinilo
+0030,Lona impresa,100,100,4965.00,Lona
+0031,Lona impresa con estructura,100,100,8000.00,Lona
+0032,Lona impresa con bolsillos s/ estructura,90,190,8300.00,Lona
+0033,Lona impresa con bolsillos c/ estructura,90,190,16372.00,Lona
+0034,Banner estandar c/ doble tensor,90,190,16372.00,Lona
+0035,Banner roll up (cuerpo de pvc y armado) tamaño 85x200cm,85,200,18874.00,Lona
+0036,Servicio de colocación de vinilo,100,100,2500.00,Vinilo
+0037,Confección de estructura portante de lona x m2,1,1,15000.00,Lona
+0038,Papel obra tamaño oficio de 75g simple faz byn,21,35,11.86,Papel
+0039,Papel obra tamaño oficio de 75g doble faz byn,21,35,17.64,Papel
+0040,Papel obra tamaño oficio de 75g simple faz color,21,35,47.05,Papel
+0041,Papel obra tamaño oficio de 75g doble faz color,21,35,58.82,Papel
+0042,Papel obra tamaño A4 80g simple faz byn,21,30,10.27,Papel
+0043,Papel obra tamaño A4 80g doble faz byn,21,30,15.29,Papel
+0044,Papel obra tamaño A4 80g simple faz color,21,30,40.78,Papel
+0045,Papel obra tamaño A4 80g doble faz color,21,30,50.98,Papel
+0046,Papel kraft 200g simple faz,21,30,96.81,Papel
+0047,Papel kraft 200g doble faz,21,30,129.08,Papel
+0048,Papel mate de 300g (simple faz a color),21,30,181.30,Papel
+0049,Papel mate de 300g (DOBLE faz a color),21,30,271.92,Papel
+0050,Papel mate de 260g (simple faz a color),21,30,170.68,Papel
+0051,Papel mate de 260g (doble faz a color),21,30,256.02,Papel
+0052,Papel mate de 220g (simple faz a color),21,30,154.94,Papel
+0053,Papel mate de 220g (doble faz a color),21,30,232.41,Papel
+0054,Papel glossy foto de 115g (simple faz a color),21,30,112.72,Papel
+0055,Papel glossy foto de 115g (doble faz a color),21,30,169.08,Papel

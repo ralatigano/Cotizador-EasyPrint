@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        {% endblock %}
+        
+        <title>{% block title %}Productos Cargados{% endblock %}</title>
+    </head>
+    <body>
+        {% block bodycontent %}
+        <div class="container">
+            <h1>Operación exitosa</h1>
+            <p>Se han cargado {{contador}} productos  de {{total}} exitosamente</p>
+            <a href="/" class="btn btn-success">Volver al inicio</a>
+        </div>
+        {% endblock %}
+
+    </body>
+</html>

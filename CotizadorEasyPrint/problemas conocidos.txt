@@ -1,0 +1,32 @@
+***********Problemas***********
+
+1) Al editar un presupuesto y guardarlo se crea un nuevo presupuesto con los mismos ítems pero el presupuesto anterior seguiría existiendo, solo que sin ningún producto,
+porque en el proceso, estos dejaron de pertenecer al presupuesto antiguo para pasar a pertenecer al nuevo. Por un lado estoy ahorrando memoria en la base de datos pero
+pierdo la posibilidad de ver el presupuesto original si fuera necesario.
+2) Por lo pronto no se puede editar pedidos. Considero que dado el caso es mejor crear uno nuevo desde el presupuesto asociado ¿?
+5) Averiguar como se exportan archivos para que se puedan generar presupuestos que se puedan enviar. (lo mejor que conseguí es que se renderice un template que se pueda imprimir desde el navegador)
+
+***********Por hacer***********
+
+
+
+***********Hecho***********
+4) Quitar el requisito de required del campo "info_adic" y de "cliente" para que Fer pueda hacer cálculos rápidos. Habría que permitir que se pueda editar el cliente luego. (Hecho)
+1) Resolver la parte de cálculo de costos. (hecho parcialmente, falta definir calculo de pulseras) Consultar sobre las pulseras. Si el largo es de 31 o 46 (fijo). (Hecho)
+4) ¿Encadenar los select? (Hecho)
+6) Resolver el problema de eliminar todos los ítems del presupuesto que se está creando. ¿Javascript + Datatable? ¿Como diferencio los ítems que están en el presupuesto que estoy creando? (Hecho)
+8) Agregar el botón de borrar/cancelar en el template de nuevo_calculo.html (hecho)
+10) hacer que los presupuestos se ordenen desde el último creado hacia atras. (hecho)
+11) Buscar como agregar las opciones a la Datatable de presupuestos y pedidos. (Hecho)
+12) Template para editar el estado del pedido. (Hecho)
+3) Armar una pestaña de clientes para poder editar/consultar los datos del cliente. (Hecho)
+2) Armar la parte de pedidos: Una tabla donde se pueda ver los pedidos con su estado y el presupuesto asociado. Al ver el presupuesto este debería poder solo verse y ya no editarse.
+Debe poder editarse el estado en el que se encuentra el pedido. Probablemente podría editarse el presupuesto y generar un nuevo pedido. Habría que resolver como ajustar el nuevo saldo.
+    -Le importó poco el color que le puse al formulario. (resuelto parcialmente)
+    -No toma número de presupuesto. (resuelto)
+    -No toma el total. (resuelto)
+    -Editar el título del template. (hecho)
+    -Editar el título de la pestaña. (hecho)
+9) Revisar cálculo de stickers. Caso 100 stickers 5x5. (Hecho)
+13) Función/Template para agragar un producto. (Hecho)
+14) ¿Como vamos a registrar que un pedido ya está totalmente pagado? Es decir, mas allá del estado 'Pagado' ¿Modificamos el campo 'Saldo'?(Resuelto, cada cambio en campos relacionados a dinero modifica las cantidades correspondientes)
